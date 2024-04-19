@@ -245,7 +245,6 @@ void setup()
 
 void loop()
 {
-  filterValueF();
   // IR
   valIRR = digitalRead(IRR);
   Serial.print("IR phai: ");
@@ -281,7 +280,9 @@ void loop()
   digitalWrite(trig3, 0);
   duration3 = pulseIn(echo3, HIGH);
   distance3 = int(duration3 / 2 / 29.412);
-
+  filterValueF();
+  filterValR();
+  filterValL();
   // Serial.print(distance1);
   // Serial.println("cm");
   // Serial.print(distance2);
